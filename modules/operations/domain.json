@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "module": "operations",
+  "routing": {
+    "canonicalName": "运营后台",
+    "aliases": [
+      "ops-page-skill",
+      "运营后台",
+      "运营管理后台",
+      "运营后台页面"
+    ],
+    "defaultWhenProductOmitted": true,
+    "multipleProductBehavior": "use-explicit-product"
+  },
+  "adapter": {
+    "execution": {
+      "policy": "modules/operations/execution/generation-policy.json",
+      "pageContract": "modules/operations/execution/page-contract.md",
+      "shell": {
+        "root": "modules/operations/shell",
+        "contract": "modules/operations/shell/shell-contract.md",
+        "sources": [
+          "PlatformProvider.tsx",
+          "PlatformShell.tsx",
+          "PlatformModule.tsx",
+          "PlatformQueryForm.tsx",
+          "PlatformTable.tsx",
+          "PlatformTableToolbar.tsx",
+          "PlatformTableValue.tsx",
+          "modalDividers.tsx",
+          "shell.css"
+        ],
+        "assets": [
+          "易宝支付:展开.svg",
+          "易宝支付:收起.svg"
+        ]
+      },
+      "coreContext": "modules/operations/execution/context-packs/core.md",
+      "familyContexts": {
+        "list": "modules/operations/execution/context-packs/list.md",
+        "form": "modules/operations/execution/context-packs/form.md",
+        "detail": "modules/operations/execution/context-packs/detail.md",
+        "dashboard": "modules/operations/execution/context-packs/dashboard.md",
+        "result": "modules/operations/execution/context-packs/result.md",
+        "custom": "modules/operations/execution/context-packs/custom.md"
+      },
+      "scaffoldCommand": "node scripts/scaffold-page.mjs --out changes/{change-id} --request-file {request-file}",
+      "dispatchCommand": "node scripts/dispatch-ops-page-command.mjs --request \"{request}\"",
+      "prepareCommand": "node scripts/prepare-preview.mjs --project changes/{change-id}",
+      "buildCommand": "cd changes/{change-id} && node scripts/build-preview.mjs",
+      "validateCommand": "node scripts/validate-page-spec.mjs changes/{change-id}/page-spec.json",
+      "specScaffoldCommand": "node scripts/scaffold-ops-page-spec.mjs --out changes/{change-id} --request-file {request-file}",
+      "specBuildCommand": "node scripts/build-ops-page-spec.mjs --spec changes/{change-id}/page-spec.json",
+      "specValidateCommand": "node scripts/validate-ops-page-spec.mjs changes/{change-id}/page-spec.json",
+      "finishCommand": "node scripts/finish-ops-page.mjs --change changes/{change-id}",
+      "checkCommand": "node scripts/check-skill.mjs"
+    },
+    "resources": {
+      "always": [
+        "modules/operations/execution/context-packs/core.md",
+        "modules/operations/DOMAIN.md",
+        "modules/operations/platform.config.json",
+        "modules/operations/design-system/director-rules/01-visual-foundations.md",
+        "references/antd-components.md",
+        "modules/operations/execution/recipes/recipe-registry.json",
+        "modules/operations/execution/recipes/recipes.md"
+      ],
+      "requirement": [
+        "modules/operations/DOMAIN.md"
+      ],
+      "generate": [
+        "modules/operations/frontend.md",
+        "modules/operations/execution/page-contract.md",
+        "modules/operations/shell/shell-contract.md"
+      ],
+      "review": [
+        "modules/operations/design-system/director-rules/03-interaction-quality.md",
+        "modules/operations/execution/page-contract.md"
+      ]
+    }
+  },
+  "intents": [
+    {
+      "id": "dashboard",
+      "family": "dashboard",
+      "priority": 100,
+      "signals": [
+        "仪表盘",
+        "数据看板",
+        "数据概览",
+        "趋势分析"
+      ]
+    },
+    {
+      "id": "result",
+      "family": "result",
+      "priority": 90,
+      "signals": [
+        "结果页",
+        "处理结果",
+        "成功页",
+        "失败页"
+      ]
+    },
+    {
+      "id": "detail",
+      "family": "detail",
+      "priority": 80,
+      "signals": [
+        "详情页",
+        "独立详情",
+        "详情展示"
+      ]
+    },
+    {
+      "id": "form",
+      "family": "form",
+      "priority": 70,
+      "signals": [
+        "独立表单",
+        "新增页面",
+        "编辑页面",
+        "表单页"
+      ]
+    },
+    {
+      "id": "list",
+      "family": "list",
+      "priority": 60,
+      "signals": [
+        "搜索条件",
+        "查询条件",
+        "表格字段",
+        "table值",
+        "字段",
+        "条件",
+        "列表",
+        "管理后台",
+        "管理页面",
+        "账号管理",
+        "查询"
+      ]
+    },
+    {
+      "id": "custom",
+      "family": "custom",
+      "priority": 10,
+      "signals": [
+        "工作台",
+        "自定义画布",
+        "审批流程",
+        "复杂组合"
+      ]
+    }
+  ]
+}

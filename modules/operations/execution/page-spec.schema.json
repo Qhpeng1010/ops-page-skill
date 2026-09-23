@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ops-page.local/schemas/ops-page-spec-v1.json",
+  "title": "Ops Page Spec",
+  "type": "object",
+  "required": ["schemaVersion", "runtime", "metadata", "shell", "list"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "status": { "enum": ["draft", "ready"] },
+    "runtime": { "const": "ops-page-spec" },
+    "metadata": { "type": "object", "required": ["changeId", "title", "family", "request"], "properties": { "changeId": { "type": "string", "minLength": 1 }, "title": { "type": "string", "minLength": 1 }, "family": { "const": "list" }, "request": { "type": "string", "minLength": 1 } }, "additionalProperties": true },
+    "shell": { "type": "object", "required": ["projectKey", "group", "pageKey"], "properties": { "projectKey": { "type": "string", "minLength": 1 }, "group": { "type": "string", "minLength": 1 }, "pageKey": { "type": "string", "minLength": 1 }, "projectName": { "type": "string" }, "brand": { "type": "string" }, "userName": { "type": "string" } }, "additionalProperties": true },
+    "list": { "type": "object", "required": ["query", "table"] }
+  },
+  "additionalProperties": false
+}

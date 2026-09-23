@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "brand": { "name": "运营管理平台", "logoUrl": "", "collapsedLogoUrl": "", "logoHeight": 22, "dividerHeight": 16 },
+  "projects": [
+    { "key": "merchant-service", "name": "商户服务管理" },
+    { "key": "platform-settings", "name": "平台配置" }
+  ],
+  "appearance": "light",
+  "density": "default",
+  "componentSize": "middle",
+  "layout": {
+    "elementGap": 16,
+    "buttonGap": 8,
+    "newTabBackground": "#EAEDF0",
+    "newTabPadding": 12,
+    "newTabModuleGap": 12,
+    "moduleDetailRowGap": 12,
+    "tableToolbarGap": 12,
+    "detailTitleGap": 12,
+    "modalDividerGap": 16,
+    "queryDividerColor": "rgba(0, 0, 0, 0.08)",
+    "modalDividerColor": "rgba(0, 0, 0, 0.08)"
+  },
+  "theme": {
+    "token": {
+      "colorPrimary": "#1890FF",
+      "borderRadius": 6,
+      "fontSize": 14,
+      "fontWeight": 400,
+      "fontWeightStrong": 500,
+      "controlHeight": 32,
+      "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif"
+    },
+    "components": {
+      "Table": { "fontWeightStrong": 500 },
+      "Menu": {
+        "darkItemBg": "#304156",
+        "darkSubMenuItemBg": "#1f2d3d",
+        "darkPopupBg": "#1f2d3d",
+        "darkItemHoverBg": "#001529",
+        "darkItemColor": "#bbc7d4",
+        "darkItemHoverColor": "#ffffff",
+        "darkItemSelectedBg": "#1f2d3d",
+        "itemBorderRadius": 0,
+        "subMenuItemBorderRadius": 0,
+        "itemMarginInline": 0,
+        "itemMarginBlock": 0,
+        "itemHeight": 50
+      }
+    }
+  },
+  "shell": {
+    "sidebarWidth": 205,
+    "collapsedWidth": 64,
+    "headerHeight": 50,
+    "tabsHeight": 36,
+    "tabsBorderRadius": 4,
+    "tabsFontSize": 12,
+    "tabsDotSize": 6,
+    "tabsGap": 4,
+    "tabsCloseIconScale": 0.8,
+    "projectPanelWidth": 126,
+    "projectPanelHeightPercent": 50,
+    "projectPanelFontSize": 12,
+    "projectPanelBackground": "#304156f2",
+    "userName": "秦海鹏",
+    "contentPadding": 24,
+    "sidebarBackground": "#304156",
+    "brandBackground": "#314254",
+    "brandColor": "#ffffff",
+    "showTabs": true
+  }
+}

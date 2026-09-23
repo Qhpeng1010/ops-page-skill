@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "strategy": "open",
+  "capabilities": [
+    {
+      "id": "shell.navigation",
+      "status": "example",
+      "components": [
+        "Menu",
+        "Tabs",
+        "Breadcrumb",
+        "Drawer"
+      ],
+      "source": "modules/operations/shell/PlatformShell.tsx"
+    },
+    {
+      "id": "shell.project-switch",
+      "status": "example",
+      "components": [
+        "Drawer",
+        "Menu",
+        "Button",
+        "Divider",
+        "Tooltip"
+      ],
+      "source": "modules/operations/shell/PlatformShell.tsx",
+      "reference": "modules/operations/shell/shell-contract.md"
+    },
+    {
+      "id": "shell.header-tools",
+      "status": "example",
+      "components": [
+        "Button",
+        "Tooltip",
+        "Dropdown",
+        "Input",
+        "Modal",
+        "SearchOutlined",
+        "FullscreenOutlined",
+        "UserOutlined"
+      ],
+      "source": "modules/operations/shell/PlatformShell.tsx",
+      "reference": "modules/operations/shell/shell-contract.md"
+    },
+    {
+      "id": "query.basic",
+      "status": "example",
+      "components": [
+        "Form",
+        "Input",
+        "Button",
+        "Table"
+      ],
+      "source": "assets/frontend-template/src/pages.tsx"
+    },
+    {
+      "id": "query.layout",
+      "status": "example",
+      "components": [
+        "Form",
+        "Input",
+        "Select",
+        "Button",
+        "DownOutlined",
+        "UpOutlined"
+      ],
+      "source": "modules/operations/shell/PlatformQueryForm.tsx",
+      "reference": "modules/operations/design-system/page-patterns/list.md"
+    },
+    {
+      "id": "table.toolbar",
+      "status": "example",
+      "components": [
+        "Table",
+        "Button",
+        "Tooltip",
+        "Dropdown",
+        "Checkbox"
+      ],
+      "source": "modules/operations/shell/PlatformTableToolbar.tsx",
+      "reference": "modules/operations/design-system/page-patterns/list.md"
+    },
+    {
+      "id": "table.column-align",
+      "status": "example",
+      "components": [
+        "Table"
+      ],
+      "source": "modules/operations/shell/PlatformTable.tsx",
+      "reference": "modules/operations/design-system/page-patterns/list.md"
+    },
+    {
+      "id": "table.fixed-operation",
+      "status": "example",
+      "components": [
+        "Table"
+      ],
+      "source": "modules/operations/shell/PlatformTable.tsx",
+      "reference": "modules/operations/design-system/page-patterns/list.md"
+    },
+    {
+      "id": "table.value-display",
+      "status": "example",
+      "components": [
+        "Badge",
+        "Tag"
+      ],
+      "source": "modules/operations/shell/PlatformTableValue.tsx",
+      "reference": "modules/operations/design-system/page-patterns/list.md"
+    },
+    {
+      "id": "table.pagination",
+      "status": "example",
+      "components": [
+        "Table"
+      ],
+      "source": "assets/frontend-template/src/pages.tsx"
+    },
+    {
+      "id": "detail.overlay",
+      "status": "example",
+      "components": [
+        "Drawer",
+        "Descriptions"
+      ],
+      "source": "assets/frontend-template/src/pages.tsx"
+    },
+    {
+      "id": "form.modal-preview",
+      "status": "example",
+      "components": [
+        "Modal",
+        "Form",
+        "Input",
+        "Select",
+        "Switch",
+        "Button",
+        "Alert"
+      ],
+      "source": "assets/frontend-template/src/pages.tsx",
+      "reference": "modules/operations/design-system/page-patterns/form.md"
+    },
+    {
+      "id": "module.tabs",
+      "status": "example",
+      "components": [
+        "Card",
+        "Tabs"
+      ],
+      "source": "modules/operations/shell/PlatformModule.tsx",
+      "reference": "modules/operations/design-system/page-patterns/module-page.md"
+    },
+    {
+      "id": "form.edit",
+      "status": "guidance",
+      "components": [
+        "Form",
+        "Modal",
+        "Drawer"
+      ],
+      "reference": "modules/operations/design-system/page-patterns/form.md"
+    },
+    {
+      "id": "module.details-table",
+      "status": "example",
+      "components": [
+        "Card",
+        "Descriptions",
+        "Table"
+      ],
+      "source": "modules/operations/shell/PlatformModule.tsx",
+      "reference": "modules/operations/design-system/page-patterns/module-page.md"
+    },
+    {
+      "id": "module.form-footer",
+      "status": "example",
+      "components": [
+        "Card",
+        "Form",
+        "Input",
+        "Select",
+        "Switch",
+        "Button",
+        "Space"
+      ],
+      "source": "modules/operations/shell/PlatformModule.tsx",
+      "reference": "modules/operations/design-system/page-patterns/module-page.md"
+    },
+    {
+      "id": "table.batch-export",
+      "status": "guidance",
+      "components": [
+        "Table",
+        "Dropdown",
+        "Button"
+      ],
+      "reference": "modules/operations/design-system/page-patterns/list.md"
+    },
+    {
+      "id": "form.dependencies",
+      "status": "guidance",
+      "components": [
+        "Form",
+        "Select",
+        "Cascader"
+      ],
+      "reference": "references/antd-components.md"
+    },
+    {
+      "id": "workflow.approval",
+      "status": "guidance",
+      "components": [
+        "Steps",
+        "Timeline",
+        "Form",
+        "Modal"
+      ],
+      "reference": "modules/operations/design-system/director-rules/03-interaction-quality.md"
+    },
+    {
+      "id": "dashboard.analysis",
+      "status": "extension",
+      "components": [
+        "Statistic",
+        "Select",
+        "DatePicker"
+      ],
+      "reference": "modules/operations/design-system/page-patterns/dashboard.md"
+    },
+    {
+      "id": "custom.canvas",
+      "status": "extension",
+      "components": [
+        "Button",
+        "Dropdown",
+        "Drawer"
+      ],
+      "reference": "modules/operations/design-system/director-rules/02-page-composition.md"
+    }
+  ]
+}

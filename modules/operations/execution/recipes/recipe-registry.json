@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "strategy": "composable-semantic-suggestions",
+  "rules": {
+    "fieldPolicy": "preserve-natural-language-fields",
+    "composition": "combine-all-compatible-matches",
+    "override": "explicit-user-presentation-wins"
+  },
+  "recipes": [
+    {
+      "id": "management-list",
+      "label": "管理列表",
+      "families": ["list"],
+      "modes": ["ops-page-spec", "react"],
+      "match": { "mode": "family-or-semantic", "signals": ["查询", "列表", "管理", "筛选", "搜索", "条件", "表格", "table值", "表格字段", "列", "记录"] },
+      "capabilities": ["query", "table", "pagination"],
+      "presentation": "plain",
+      "defaults": {
+        "queryColumns": 3,
+        "tableToolbar": true,
+        "pagination": true
+      },
+      "customization": "查询字段、表格列、格式、操作和数据均从当前自然语言需求推断，可自由增删。"
+    },
+    {
+      "id": "form-modal",
+      "label": "表单弹窗",
+      "families": ["list", "form", "custom"],
+      "modes": ["ops-page-spec", "react"],
+      "match": { "mode": "semantic", "signals": ["新增", "新建", "创建", "编辑", "录入", "表单", "弹窗", "modal"] },
+      "capabilities": ["form.modal"],
+      "presentation": "modal",
+      "customization": "适用于新增、编辑和短表单任务；字段和校验从需求生成，不设字段白名单。"
+    },
+    {
+      "id": "detail-drawer",
+      "label": "详情抽屉",
+      "families": ["list", "detail", "custom"],
+      "modes": ["ops-page-spec", "react"],
+      "match": { "mode": "semantic", "signals": ["详情", "查看", "明细", "抽屉", "drawer"] },
+      "capabilities": ["detail.overlay"],
+      "presentation": "drawer",
+      "customization": "适用于从列表保留上下文查看详情；分组和字段从需求生成。"
+    },
+    {
+      "id": "workspace-tab",
+      "label": "业务标签页",
+      "families": ["list", "form", "detail", "custom"],
+      "modes": ["react"],
+      "match": { "mode": "semantic", "signals": ["新标签页", "独立页", "新页面", "工作区", "页签", "独立地址"] },
+      "capabilities": ["page.tab", "module.page"],
+      "presentation": "workspace-tab",
+      "customization": "适用于新增、编辑或详情需要独立工作区时；可按任务选择单模块或多模块。"
+    },
+    {
+      "id": "row-action-confirm",
+      "label": "行操作确认",
+      "families": ["list"],
+      "modes": ["ops-page-spec", "react"],
+      "match": { "mode": "semantic", "signals": ["禁用", "启用", "删除", "下线", "作废", "二次确认", "确认操作"] },
+      "capabilities": ["action.confirm"],
+      "presentation": "modal-confirm",
+      "customization": "适用于禁用、启用、删除、下线等需要决策的行操作；确认内容按对象和影响生成，并通过 withModalDividers 使用 warning 图标、分割线和右下角操作的统一 Modal 提示形态。"
+    },
+    {
+      "id": "batch-tools",
+      "label": "批量工具",
+      "families": ["list", "custom"],
+      "modes": ["ops-page-spec", "react"],
+      "match": { "mode": "semantic", "signals": ["批量", "批处理", "批量操作", "导出", "勾选", "选中项"] },
+      "capabilities": ["table.batch"],
+      "presentation": "toolbar",
+      "customization": "适用于导出、批量启用、批量禁用等列表工具；作用范围和数据口径按需求生成。"
+    },
+    {
+      "id": "multi-module-workspace",
+      "label": "多模块工作区",
+      "families": ["list", "form", "detail", "custom"],
+      "modes": ["react"],
+      "match": { "mode": "semantic", "signals": ["多模块", "模块组合", "信息分组", "关联信息", "工作区"] },
+      "capabilities": ["module.page", "module.composition"],
+      "presentation": "multi-module",
+      "customization": "适用于需要独立信息模块、关联表格或分组表单的工作区；模块数量和字段关系按需求决定。"
+    }
+  ]
+}

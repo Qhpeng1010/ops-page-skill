@@ -1,0 +1,12 @@
+/changes/
+/chanegs/
+.cache/
+node_modules/
+dist/
+preview-assets/
+preview.html
+preview-build.json
+ops-page-spec-build.json
+.pnpm-store/
+.DS_Store
+*.log

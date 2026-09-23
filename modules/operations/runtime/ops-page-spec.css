@@ -1,0 +1,5 @@
+/* Spec business content only. Framework styles come from shared shell.css. */
+.ops-spec-description-value { white-space: pre-wrap; overflow-wrap: anywhere; }
+.ops-spec-detail-title { margin: 0 0 var(--ops-detail-title-gap, 12px); font-size: 16px; font-weight: var(--ops-strong-font-weight, 500); }
+.ops-spec-row-actions-expanded { display: grid; gap: var(--ops-button-gap, 8px); }
+.ops-spec-row-actions-line { display: flex; flex-wrap: wrap; gap: var(--ops-button-gap, 8px); }

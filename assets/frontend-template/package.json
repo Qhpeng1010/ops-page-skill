@@ -1,0 +1,9 @@
+{
+  "name": "ops-page-preview",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "vite", "build": "node scripts/build-preview.mjs", "preview": "vite preview --host 127.0.0.1" },
+  "dependencies": { "react": "^19.2.0", "react-dom": "^19.2.0", "antd": "^6.6.4", "@ant-design/icons": "^6.0.0" },
+  "devDependencies": { "@types/react": "^19.0.0", "@types/react-dom": "^19.0.0", "typescript": "~5.7.3", "vite": "^6.0.11" }
+}

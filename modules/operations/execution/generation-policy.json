@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "policyVersion": "2026.09.22.6",
+  "system": "operations",
+  "strategyVersion": 1,
+  "knowledgeLoading": {
+    "mode": "progressive",
+    "always": [
+      "modules/operations/execution/context-packs/core.md",
+      "modules/operations/DOMAIN.md",
+      "modules/operations/platform.config.json",
+      "modules/operations/design-system/director-rules/01-visual-foundations.md",
+      "references/antd-components.md",
+      "modules/operations/execution/recipes/recipe-registry.json",
+      "modules/operations/execution/recipes/recipes.md"
+    ],
+    "familyBeforeImplementation": true,
+    "onDemandOnly": true,
+    "doNotReadUnmatchedFamilies": true
+  },
+  "directorRules": {
+    "visual": "modules/operations/design-system/director-rules/01-visual-foundations.md",
+    "composition": "modules/operations/design-system/director-rules/02-page-composition.md",
+    "interaction": "modules/operations/design-system/director-rules/03-interaction-quality.md"
+  },
+  "routing": {
+    "resolver": "scripts/lib/ops-page-routing.mjs",
+    "defaultFamily": "list",
+    "unknownIntent": "clarify",
+    "secondaryCapabilitiesFromRequest": true
+  },
+  "modes": {
+    "ops-page-spec": {
+      "purpose": "常见查询列表、表格、新增 Modal 和详情 Drawer",
+      "families": ["list"],
+      "runtime": "modules/operations/runtime/ops-page-spec-runtime.js",
+      "vendor": "modules/operations/runtime/vendor/",
+      "sharedFramework": "modules/operations/shell/",
+      "runtimeIntegrity": "source-and-asset-sha256",
+      "resources": [
+        "modules/operations/execution/context-packs/ops-page-spec.md",
+        "modules/operations/execution/page-spec.schema.json"
+      ],
+      "review": ["modules/operations/execution/context-packs/ops-page-spec.md"]
+    },
+    "react": {
+      "purpose": "复杂或自定义后台能力",
+      "families": ["list", "form", "detail", "dashboard", "result", "custom"],
+      "resources": [
+        "modules/operations/frontend.md",
+        "modules/operations/execution/page-contract.md",
+        "modules/operations/shell/shell-contract.md"
+      ],
+      "review": [
+        "modules/operations/design-system/director-rules/03-interaction-quality.md",
+        "modules/operations/execution/page-contract.md"
+      ]
+    }
+  },
+  "families": {
+    "list": {
+      "pagePattern": "modules/operations/design-system/page-patterns/list.md",
+      "contextPack": "modules/operations/execution/context-packs/list.md",
+      "capabilities": [
+        "query",
+        "table",
+        "pagination"
+      ]
+    },
+    "form": {
+      "pagePattern": "modules/operations/design-system/page-patterns/form.md",
+      "contextPack": "modules/operations/execution/context-packs/form.md",
+      "capabilities": [
+        "form",
+        "validation",
+        "submit.states"
+      ]
+    },
+    "detail": {
+      "pagePattern": "modules/operations/design-system/page-patterns/detail.md",
+      "contextPack": "modules/operations/execution/context-packs/detail.md",
+      "capabilities": [
+        "detail",
+        "detail.overlay"
+      ]
+    },
+    "dashboard": {
+      "pagePattern": "modules/operations/design-system/page-patterns/dashboard.md",
+      "contextPack": "modules/operations/execution/context-packs/dashboard.md",
+      "capabilities": [
+        "dashboard",
+        "metrics"
+      ]
+    },
+    "result": {
+      "pagePattern": "modules/operations/design-system/page-patterns/result.md",
+      "contextPack": "modules/operations/execution/context-packs/result.md",
+      "capabilities": [
+        "result",
+        "recovery"
+      ]
+    },
+    "custom": {
+      "pagePattern": "modules/operations/design-system/director-rules/02-page-composition.md",
+      "contextPack": "modules/operations/execution/context-packs/custom.md",
+      "capabilities": [
+        "custom",
+        "composition"
+      ]
+    }
+  },
+  "onDemand": {
+    "modulePage": "modules/operations/design-system/page-patterns/module-page.md",
+    "shell": "modules/operations/shell/shell-contract.md",
+    "contract": "modules/operations/execution/page-contract.md",
+    "capabilities": "modules/operations/execution/capability-model/capability-model.md",
+    "registry": "modules/operations/execution/capability-model/capability-registry.json",
+    "compositionRules": "modules/operations/design-system/director-rules/02-page-composition.md",
+    "interactionRules": "modules/operations/design-system/director-rules/03-interaction-quality.md"
+  },
+  "validation": {
+    "required": [
+      "node scripts/check-skill.mjs",
+      "node scripts/validate-page-spec.mjs changes/{change-id}/page-spec.json",
+      "node scripts/build-preview.mjs"
+    ],
+    "opsPageSpecRequired": [
+      "node scripts/check-skill.mjs",
+      "node scripts/validate-ops-page-spec.mjs changes/{change-id}/page-spec.json",
+      "node scripts/build-ops-page-spec.mjs --spec changes/{change-id}/page-spec.json"
+    ],
+    "browser": "manual-after-delivery"
+  },
+  "performance": {
+    "standardOpsPageSpecTargetSeconds": 420,
+    "scope": "clear list requests using the local ops-page-spec runtime",
+    "exclude": [
+      "browser acceptance",
+      "vendor rebuild",
+      "dependency installation",
+      "complex React authoring"
+    ],
+    "rerun": "only after failure or input change"
+  },
+  "reuse": {
+    "existingChange": "same-artifact-edit-only",
+    "shell": "copy-from-skill-source-on-scaffold",
+    "dependencies": "lockfile-and-environment-keyed-skill-cache",
+    "browser": "never-start-automatically",
+    "newRequest": "new-change-directory"
+  }
+}

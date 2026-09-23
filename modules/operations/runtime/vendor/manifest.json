@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "versions": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "antd": "6.6.4",
+    "@ant-design/icons": "6.3.4"
+  },
+  "sharedInputs": [
+    "modules/operations/shell/PlatformModule.tsx",
+    "modules/operations/shell/PlatformProvider.tsx",
+    "modules/operations/shell/PlatformQueryForm.tsx",
+    "modules/operations/shell/PlatformShell.tsx",
+    "modules/operations/shell/PlatformTable.tsx",
+    "modules/operations/shell/PlatformTableToolbar.tsx",
+    "modules/operations/shell/modalDividers.tsx",
+    "modules/operations/shell/shell.css"
+  ],
+  "sources": {
+    "assets/frontend-template/package.json": "ed6033f263251d4dd94e8fe7ebccaef8a7c481ed599026b9e11916884b668863",
+    "assets/frontend-template/pnpm-lock.yaml": "ced57b47b547bd2747bb91a8279a169a70be6e451d2cd62a419018db281bec4f",
+    "modules/operations/runtime/platform-entry.ts": "d88a423b2754489018191237e34437a3590a7cec0c11c2c4a2f4058ac2e3e87f",
+    "modules/operations/shell/PlatformModule.tsx": "6233050c46d163b6209f7283f51e168feae0118932cdce099a0ee09933f1269c",
+    "modules/operations/shell/PlatformProvider.tsx": "96c197efcf19b90acd678cf44304f36d8c2dd0d4ac7a6a695598db21babedf7e",
+    "modules/operations/shell/PlatformQueryForm.tsx": "32b45d32eb4d9cea947c87eee8c81d34d7d51427bfa731c172285cc0034cffa7",
+    "modules/operations/shell/PlatformShell.tsx": "ceceab5bae8a4310460fe77616d37171220e35851042d179ef78a3594b283fc9",
+    "modules/operations/shell/PlatformTable.tsx": "29ed6b18ebf32f670b82f9dcc45c1fe9c59e048ce254fea730c7e88a428d7dd4",
+    "modules/operations/shell/PlatformTableToolbar.tsx": "27b2792fbd79eae905d6f8393896b4eb9f14be3d646f9eefd74cf4c734647529",
+    "modules/operations/shell/PlatformTableValue.tsx": "401b419efbdb380d29cb1491afccfb8bdc5122fe3c664019cae3eddae5cc2cea",
+    "modules/operations/shell/modalDividers.tsx": "f6670337c127f6af8fd4dbf8d7cbd7f8342ac8c493e2b9dc983cc5795d1a7cee",
+    "modules/operations/shell/shell.css": "ce88b5e7e6979a830d3997c943a19ca892391fa88659ddb9d18cfa4865b5ffd3",
+    "modules/operations/shell/易宝支付:展开.svg": "e5c7fa886d16ae7d209d42fb0756b0f0d13eebc7b4574781332a6dd531248844",
+    "modules/operations/shell/易宝支付:收起.svg": "fb80533c2efac2012fbb42d3a1577c96f412cca2f73271f5681e863728606235",
+    "scripts/build-spec-runtime.mjs": "f5198b0834470aa23f8b00133c7fb37c61c1b39bd3e61697680ae86ad1469151"
+  },
+  "assets": {
+    "ops-platform.js": "0e84f6e4350c735bea63a5c9d63fa6466e4e3f8a7c0a24456324db7bb537480c",
+    "ops-platform.css": "845dd31418c88eca6a7fa0c33704f3bfa28e63e8c6943fadd980df0698740fa5"
+  }
+}

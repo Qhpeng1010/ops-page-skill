@@ -1,0 +1,4 @@
+interface:
+  display_name: "运营后台页面生成"
+  short_description: "按自然语言生成运营后台页面，常见列表走本地规格模式，复杂能力保留 React"
+  default_prompt: "使用 $ops-page-skill 根据我的自然语言需求生成运营后台页面，遵循平台设计规则和 Ant Design 组件规范。"

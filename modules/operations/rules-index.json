@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "module": "operations",
+  "always": [
+    "modules/operations/DOMAIN.md",
+    "modules/operations/platform.config.json",
+    "modules/operations/design-system/director-rules/01-visual-foundations.md",
+    "references/antd-components.md",
+    "modules/operations/execution/recipes/recipe-registry.json",
+    "modules/operations/execution/recipes/recipes.md"
+  ],
+  "directorRules": {
+    "visual": "modules/operations/design-system/director-rules/01-visual-foundations.md",
+    "composition": "modules/operations/design-system/director-rules/02-page-composition.md",
+    "interaction": "modules/operations/design-system/director-rules/03-interaction-quality.md"
+  },
+  "pagePatterns": {
+    "list": "modules/operations/design-system/page-patterns/list.md",
+    "form": "modules/operations/design-system/page-patterns/form.md",
+    "detail": "modules/operations/design-system/page-patterns/detail.md",
+    "dashboard": "modules/operations/design-system/page-patterns/dashboard.md",
+    "result": "modules/operations/design-system/page-patterns/result.md"
+  },
+  "onDemand": {
+    "modulePage": "modules/operations/design-system/page-patterns/module-page.md",
+    "frontend": "modules/operations/frontend.md",
+    "shell": "modules/operations/shell/shell-contract.md",
+    "contract": "modules/operations/execution/page-contract.md",
+    "capabilities": "modules/operations/execution/capability-model/capability-model.md",
+    "registry": "modules/operations/execution/capability-model/capability-registry.json",
+    "compositionRules": "modules/operations/design-system/director-rules/02-page-composition.md",
+    "interactionRules": "modules/operations/design-system/director-rules/03-interaction-quality.md"
+  },
+  "contextPacks": {
+    "core": "modules/operations/execution/context-packs/core.md",
+    "list": "modules/operations/execution/context-packs/list.md",
+    "form": "modules/operations/execution/context-packs/form.md",
+    "detail": "modules/operations/execution/context-packs/detail.md",
+    "dashboard": "modules/operations/execution/context-packs/dashboard.md",
+    "result": "modules/operations/execution/context-packs/result.md",
+    "custom": "modules/operations/execution/context-packs/custom.md",
+    "opsPageSpec": "modules/operations/execution/context-packs/ops-page-spec.md"
+  }
+}
