@@ -20,6 +20,7 @@ export const pages: PlatformPage[] = [{
 ## 查询与列表
 
 - `PlatformQueryForm`：继承 Ant Form props，`columns={3 | 4}`，可选 `collapsible`、`defaultExpanded`；children 为 Form.Item，`actions` 放查询/重置。查询按钮用 `htmlType="submit"`，操作区自动靠最后一列右侧；收起只显示首行，Form 保留字段值。
+- `PlatformQueryForm` 的 `actions` 按钮区域整体右对齐，组内顺序必须是辅助按钮在左、主按钮在右；主按钮始终是组内最右侧业务按钮，窄屏换行不得反转顺序。
 - `PlatformTable<T>`：继承 Ant Table props，可传 `columnAlign="left" | "center" | "right"`；单列 `align` 优先。操作列用 `key: 'action'` 或标题“操作”，横向溢出时自动固定右侧，仍应按字段宽度传入 `scroll.x`。行操作按[列表页规则](../design-system/page-patterns/list.md)统计当前行可见项，3 项及以上默认使用 Ant Dropdown；用户明确要求展开时每行最多 3 个文字按钮并换行，规格模式设置 `list.table.actionDisplay: "expanded"`。文字按钮组之间固定使用 `layout.buttonGap`（默认 8px），React 操作列不要显式使用 `Space size={0}`。业务维护 rows、查询、loading、error、分页和列显隐状态。
 - `PlatformTableToolbar`：`title`、`primaryAction`、`secondaryActions`；`onRefresh`、`refreshLoading`；`size` / `onSizeChange`（small/middle/large）；`columnOptions: { key, label }[]`、`visibleColumnKeys` / `onVisibleColumnKeysChange`。`showTitle` / `showRefresh` / `showDensity` / `showColumnSettings` 默认 true。标题继承平台字体栈，使用 16px 和 `theme.token.fontWeightStrong`（默认 500，中黑体）；业务按钮用 Ant Button，主操作 primary，辅助 default；设置工具使用内置图标。
 - `PlatformTableValue`：`kind="status"`、`label`、Ant Badge 的 `status` 默认呈现状态点；`kind="category"` 默认无色 Tag。`display="status" | "tag" | "text"` 可切换，显式 `color` 才加彩色 Tag。

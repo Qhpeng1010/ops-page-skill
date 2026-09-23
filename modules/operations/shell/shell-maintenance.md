@@ -26,6 +26,8 @@ Logo 右侧的白色竖向分割线高 16px，由 `brand.dividerHeight` 控制�
 
 查询列表使用 [PlatformQueryForm](./PlatformQueryForm.tsx)（或等价的 Ant Form + CSS Grid）：默认三列，仅允许三列或四列；可选 `collapsible` 在条件超过当前列数时提供带方向图标的展开 / 收起按钮。`actions` 容器始终占据最后一列并右对齐，条件不足一整行时与最后一项条件共行，条件填满时自动落到下一行最右侧。窄屏退化为单列。普通查询列表区域的工具栏由业务页面按需组合 `PlatformTableToolbar`；默认显示标题、刷新、密度和列设置，标题到表格默认 12px，右侧三个设置按钮不追加 8px gap，业务操作组与设置项之间保留 8px。业务主操作通过 `primaryAction` 使用 Ant `Button type="primary"`，辅助操作通过 `secondaryActions` 使用普通 Ant Button，不使用 link / text 按钮；从左到右为辅助操作、主操作、刷新、密度、列设置，业务按钮间距为 `layout.buttonGap`（8px）。隐藏标题或设置项时业务操作仍右对齐。`extra` 兼容自定义内容，并排在主操作之前。状态 / 种类单元格复用 [PlatformTableValue](./PlatformTableValue.tsx) 的默认 Badge / Tag 语义，种类型默认无颜色，明确需要彩色标识时传色值，并可按字段切换为文字。
 
+查询 `actions` 组内顺序固定为辅助按钮在左、主按钮在右；主按钮必须是组内最右侧业务按钮，响应式换行也保持该顺序。
+
 表格使用 [PlatformTable](./PlatformTable.tsx) 时默认列左对齐，可传 `columnAlign="center"` 或 `"right"` 调整未单独声明的列；单列 Ant `align` 优先。不要用全局 CSS 覆盖 `th` / `td` 的对齐规则。
 
 表格发生横向溢出时，操作列默认固定在右侧：使用 `fixed: 'right'`，并配置 `scroll.x`；`PlatformTable` 会识别标题为“操作”或 action/actions 键的列并自动补齐这两个设置，显式的 `fixed` 和 `scroll` 优先级更高。

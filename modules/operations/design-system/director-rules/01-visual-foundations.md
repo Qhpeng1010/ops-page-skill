@@ -25,6 +25,7 @@ REQUIRED 为交付质量要求；DEFAULT 可按明确需求调整；GUIDE 为判
 | VIS-17 | DEFAULT | 普通查询列表 Table 默认配套 PlatformTableToolbar：标题、刷新、密度、列设置默认显示，使用 Ant Button / Tooltip / Dropdown / Checkbox；用户可分别隐藏，状态由业务页面维护。工具栏标题使用 16px、500 字重，字体继承平台字体栈（中文在 macOS 上优先匹配 PingFang SC Medium / 中黑体）；工具栏业务主操作使用 primary Button，辅助操作使用普通 Button，不用 link / text 样式；从左到右为辅助操作、主操作、三项设置，业务按钮间距 8px。 |
 | VIS-18 | DEFAULT | 多模块按需支持 Ant 线型业务 Tabs：默认与第一个内容模块融合，也可按用户要求放入任一模块；同一模块标题与 Tabs 二选一，仅明确要求标题下子 Tabs 时才并存。常规字重，选中文字和下划线随主题色。切换范围可为模块组或当前模块正文，位置与状态按业务决定。单模块不默认添加 Tabs。 |
 | VIS-19 | DEFAULT | 查询条件默认使用三列网格，仅允许按需求切换为四列；启用展开 / 收起时，超过当前列数的条件隐藏在首行之后。查询和重置动作始终位于条件区最右列并右对齐，条件不足一行时可与最后一项条件共行；窄屏降为单列。 |
+| VIS-30 | DEFAULT | 查询按钮区域整体右对齐；按钮组内部始终保持辅助按钮在左、主按钮在右，主按钮是组内最右侧业务按钮。响应式换行不得反转该顺序。 |
 | VIS-20 | DEFAULT | 表格工具栏标题到表格默认间距为 layout.tableToolbarGap（12px）；刷新、密度、列设置之间不追加 8px gap。状态型字段默认 Badge 状态点加文字，种类型字段默认无颜色 Tag，明确需要彩色标识时才传入颜色；均可按字段切换为普通文字，状态还可切换为 Tag。 |
 | VIS-21 | DEFAULT | 多模块页内 Descriptions 默认三列，行间距为 layout.moduleDetailRowGap（12px）。相邻详情模块之间使用灰色分割线，模块标题下不重复放线；详情抽屉及同一内容容器内的分组，分割线上下各留 layout.elementGap（默认 16px），内容和下一模块标题不能贴线。实现必须使用 `.page-stack` + 相邻 `.platform-detail-section`，不要在模块标题下手动插入 Ant Divider。Table 默认不带独立标题及刷新、密度、列设置，用户明确要求时按项开启；含 Table 的模块设置 hasTable，去掉标题下分割线和标题到表格顶部的 16px 留白，保留模块标题及表格自身分隔线。 |
 | VIS-22 | DEFAULT | Drawer 标题栏左右分布：标题左对齐，关闭按钮固定右侧；footer 按钮右对齐，辅助按钮在左、主按钮在最右；使用 Ant Drawer `closable={{ placement: 'end' }}`，不依赖内部类名定位。 |

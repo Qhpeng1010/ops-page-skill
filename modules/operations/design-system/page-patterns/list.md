@@ -6,6 +6,8 @@
 
 查询条件默认使用 `PlatformQueryForm` 的 CSS Grid，列数为 3；只有用户明确要求时改为 4，不支持其他列数。条件之间的横向和换行纵向间距、页面区块间距读取 `platform.config.json.layout.elementGap`（默认 16px）。Form.Item 的 margin 设为 0，避免默认外边距与 gap 叠加。查询条件默认铺满网格，查询与重置等 `actions` 始终放在最后一列并右对齐；条件少时动作可与最后一项条件合并在同一行，条件填满时落到下一行最右侧。启用 `collapsible` 且条件超过列数时提供带方向图标的展开 / 收起按钮，收起仅显示首行；窄屏可退化为单列。按钮之间的横纵间距读取 `layout.buttonGap`（默认 8px），适用于查询操作、工具栏、表格行内操作和弹窗底部等按钮组。Space 通过平台 ConfigProvider 默认使用按钮间距；非按钮元素用 Space 时显式指定 `size={config.layout.elementGap}`。
 
+查询按钮区域整体保持右对齐；组内顺序固定为“辅助按钮在左、主按钮在右”，主按钮始终是该组最右侧的业务按钮，不能因 JSX 书写顺序或响应式换行反转。窄屏换行时仍保持辅助按钮在左、主按钮在右。
+
 查询区与表格区之间默认加 Ant Divider，1px 高、颜色取 `layout.queryDividerColor`（默认 rgba(0, 0, 0, 0.08)）。分割线上下分别留 16px：条件区 → 16px → 分割线 → 16px → 表格区。Divider 作为 page-stack 中独立的布局元素，margin 设为 0，避免默认外边距与 gap 叠加；无中间提示时条件区到表格合计 33px。错误或结果提示位于分割线后的结果区，同样保持 16px 区块间距。
 
 Form 字段对应查询参数，查询/重置回第一页。Table 用稳定业务 ID 作 rowKey；总数对应实际过滤结果。空结果保留筛选和列标题。操作列选择 Drawer/Modal/独立页要依据任务长度与来源上下文。
