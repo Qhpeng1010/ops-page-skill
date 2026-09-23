@@ -1,6 +1,6 @@
 # 新标签页的模块布局
 
-用户明确要求从列表查看、创建、编辑等入口打开新标签页时读取。布局参考 [用户示例](../../../../assets/reference-modules.png)，参考视觉关系，不据截图虚构业务能力。
+用户明确要求从列表查看、创建、编辑等入口打开新标签页时读取。布局按本文件的模块、间距、背景和容器规则执行，不从历史页面内容推断业务能力。
 
 - 默认查询列表、首页、普通菜单页使用 `layout: 'plain'`（或省略），保持白底。页面出现在工作区 Tabs 中本身不触发灰底。
 - 明确要求的新标签页：灰底 `layout.newTabBackground`（默认 #EAEDF0），四周 `layout.newTabPadding`（默认 12px）。信息内容放在白色 Ant Card 模块内，不再套白色整页外壳覆盖灰边。
@@ -12,7 +12,7 @@
 
 多模块需要分类切换时支持业务 Tabs，具体位置及切换范围见下方“多模块业务 Tabs”。单模块不增加默认 Tabs 规则。
 
-`PlatformModule` 来自 `src/platform/PlatformModule.tsx`，使用 Ant Card、Typography 和平台 Token；业务表单、Steps、Descriptions、Table 等自由组合在其中。不要把截图里的具体规则组或空数据硬编码为每个新需求的内容。
+`PlatformModule` 来自 `src/platform/PlatformModule.tsx`，使用 Ant Card、Typography 和平台 Token；业务表单、Steps、Descriptions、Table 等自由组合在其中。不要把示例中的具体规则组或空数据硬编码为每个新需求的内容。
 
 ```tsx
 {
@@ -32,7 +32,7 @@
 
 ## 多模块中的详情与表格
 
-参考[详情与关联表格](../../../../assets/reference-module-details-table.png)，规则限定于多模块页面。
+以下详情与关联表格规则仅限定于多模块页面。
 
 - 详情使用 Ant `Descriptions`，默认三列，行与行之间留 12px。复用 `PlatformModule.tsx` 导出的 `PlatformModuleDescriptions`，默认 `column={3}`、`size="middle"`；间距来自 `layout.moduleDetailRowGap`。按用户要求可覆盖 `column` 或 `rowGap`，内容换行时行高自然增长。上下间距不叠加为 24px，最后一行不留额外行间距。
 - 模块标题保留；Table 默认不传 `title`，不添加表格独立标题和刷新、密度、列设置工具栏。用户明确要求时只添加对应项：若使用 `PlatformTableToolbar`，将其余 `show*` 设为 false，开启项需接入交互。这条覆盖普通查询列表的工具栏默认规则。
@@ -54,9 +54,9 @@ import { PlatformModule, PlatformModuleDescriptions } from './platform/PlatformM
 
 ## 多模块业务 Tabs
 
-参考 [用户 Tabs 示例](../../../../assets/reference-module-tabs.png)：白色背景、横向文字标签、常规字重，选中文字和底部下划线使用平台主题色。使用 Ant `Tabs type="line"`，保留焦点、键盘操作及窄屏溢出处理；不套工作区可关闭卡片页签的样式。
+业务 Tabs 使用白色背景、横向文字标签和常规字重，选中文字和底部下划线使用平台主题色。使用 Ant `Tabs type="line"`，保留焦点、键盘操作及窄屏溢出处理；不套工作区可关闭卡片页签的样式。
 
-这是按需求启用的能力，不要求所有多模块页面都有 Tabs。要求分类切换且未指定位置时，与第一个内容模块融合：Tabs、分隔线和首块正文放在同一白色 Card 内，不能把 Tabs 单独拆成一张导航卡片。参考 [融合布局](../../../../assets/reference-module-tabs-integrated.png)。用户指定某模块时将 tabs 传入该模块，位置不限于第一个。单模块通常不添加 Tabs，不建立默认添加规则，也不禁止用户明确要求的分类交互。
+这是按需求启用的能力，不要求所有多模块页面都有 Tabs。要求分类切换且未指定位置时，与第一个内容模块融合：Tabs、分隔线和首块正文放在同一白色 Card 内，不能把 Tabs 单独拆成一张导航卡片。用户指定某模块时将 tabs 传入该模块，位置不限于第一个。单模块通常不添加 Tabs，不建立默认添加规则，也不禁止用户明确要求的分类交互。
 
 - `PlatformModule` 接收可选 `tabs: TabsProps`，标签、顺序、默认项、禁用项与内容都由业务决定。同一模块的标题与 Tabs 默认二选一：`tabsMode="header"`（默认）且有 tabs 时不显示 title / description，不产生重复标题栏或占位；extra 自动进入 Tabs 操作区。只有用户明确要求“标题下面加子 Tabs”才设置 `tabsMode="subtabs"`，这不是常规默认布局。
 - 页面范围：受控 `activeKey/onChange` 选择下方模块组合，共享筛选可放在首个带 Tabs 的模块正文内；不同分组仍遵循 12px 灰边和模块间距、自然内容高度。

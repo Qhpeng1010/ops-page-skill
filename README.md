@@ -44,7 +44,6 @@ ops-page-skill/
 ├── agents/                          Codex 界面的技能元数据
 ├── assets/
 │   ├── frontend-template/           React 页面模板
-│   └── reference-*.png              页面视觉参考
 ├── modules/
 │   └── operations/                  运营后台业务域
 │       ├── design-system/           导演规则和页面族模板

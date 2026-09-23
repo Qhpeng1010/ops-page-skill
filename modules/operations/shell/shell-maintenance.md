@@ -54,7 +54,7 @@ Modal / Drawer 表单使用 `PlatformOverlayFormGrid`，默认两列，字段行
 
 本地预览以 `#项目key/页面key` 定位项目与页签，也兼容旧的 `#页面key` 链接（选择首个包含该页的项目）。sessionStorage 只存项目和页签 ID，项目记录相互隔离；项目菜单不是鉴权边界。接入有路由的项目时应替换为项目路由和状态方案，保留一致性与关闭回退契约，不再创建第二个 URL 管理器。
 
-用户截图保存在 [reference-frame.png](../../../assets/reference-frame.png)，只参考区域关系和深色侧栏；商户菜单数量、旧按钮颜色、截图中的头像故障和悬浮工具不作为默认能力。
+Shell 只遵循本文件、`shell-contract.md` 和平台配置中的区域关系、深色侧栏、顶栏、页签与模块规则；不从历史页面内容推断商户菜单数量、按钮颜色、头像或悬浮工具等能力。
 
 `PlatformModule` 可传 `tabs: TabsProps` 组合 Ant 线型 Tabs，默认 `tabsMode="header"`：有有效 tabs 时隐藏模块 title / description，标题与 Tabs 二选一；extra 进入 Tabs 操作区，不留下空标题栏。只有用户明确要求标题下加子 Tabs 时设置 `tabsMode="subtabs"`，同时显示标题与 Tabs。该能力供多模块页面按需使用，默认与第一个内容模块融合，标签和正文位于同一 Card 内，用户也可指定其他模块。页面范围的 activeKey/onChange 由页面管理以切换模块组；模块范围通过 items.children 切换局部内容。业务 Tabs 不修改 Shell 页签与路由，默认保留已访问面板；条件渲染的状态保留由页面负责。单模块不默认添加。
 
